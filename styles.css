@@ -1,0 +1,98 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Timeline container using CSS Grid */
+.timeline {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* Event styling */
+.event {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: start;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Marker (placeholder style) */
+.marker {
+    width: 20px;
+    height: 20px;
+    background-color: #3498db;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+/* Buttons */
+button {
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Modal (hidden by default) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 767px) {
+    .event {
+        grid-template-columns: 30px 1fr;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .timeline {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .timeline {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Timeline</h1>
+    </header>
+
+    <main class="timeline">
+        <div class="event">
+            <div class="marker"></div>
+            <div class="content">
+                <h2>Event One</h2>
+                <p>Description for event one goes here.</p>
+                <button class="open-modal">Read More</button>
+            </div>
+        </div>
+        <div class="event">
+            <div class="marker"></div>
+            <div class="content">
+                <h2>Event Two</h2>
+                <p>Description for event two goes here.</p>
+                <button class="open-modal">Read More</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>More Information</h2>
+            <p>This is where more details about the event will appear.</p>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("modal");
+        const openButtons = document.querySelectorAll(".open-modal");
+        const closeBtn = document.querySelector(".close");
+
+        openButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                modal.style.display = "block";
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
